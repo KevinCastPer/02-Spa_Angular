@@ -3,21 +3,8 @@
 
 
 <div class="row row-cols-1 row-cols-md-3 g-4 animated fadeIn fast">
-  <div class="col"  *ngFor="let heroe of heroes; let i = index">
-    <div class="card">
-      <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
-      <div class="card-body">
-        <h5 class="card-title">{{ heroe.nombre }}</h5>
-        <p class="card-text">{{ heroe.bio }}</p>
-        <p class="card-text">{{ heroe.aparicion }}</p>
-
-        <button (click)="verHeroe(i)"
-          type="button" class="btn btn-outline-primary w-100">
-          Ver más...
-        </button>
-        <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver más link...</a> -->
-      </div>
-    </div>
-  </div>
+  <!-- *ngFor="let heroe of heroes; let i = index" -->
+  
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="foo" [index]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
 
 </div>
